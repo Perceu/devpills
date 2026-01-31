@@ -5,7 +5,7 @@ from pygments.styles.dracula import DraculaStyle as Style
 
 class Settings():
     IMAGE_WIDTH = 1080
-    IMAGE_HEIGHT = 1080
+    IMAGE_HEIGHT = 1440
     SIZE_FONT = 30
     SIZE_FONT_TITLE = 80
     PADDING = 50
