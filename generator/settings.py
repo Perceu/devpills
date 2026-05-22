@@ -1,13 +1,12 @@
 import os
-# from pygments.styles.tango import TangoStyle as Style
-# from pygments.styles.vs import VisualStudioStyle as Style
-from pygments.styles.dracula import DraculaStyle as Style
+from pygments.styles.dracula import DraculaStyle as DarkStyle
+from pygments.styles.vs import VisualStudioStyle as LightStyle
 
 class Settings():
     IMAGE_WIDTH = 1080
-    IMAGE_HEIGHT = 1440
-    SIZE_FONT = 30
-    SIZE_FONT_TITLE = 80
+    IMAGE_HEIGHT = 1350
+    SIZE_FONT = 36
+    SIZE_FONT_TITLE = 72
     PADDING = 50
     LOAD_TRUNCATED_IMAGES = True
     BASE_PATH = os.getcwd()
@@ -19,5 +18,7 @@ class Settings():
     RUST_LOGO = f'{BASE_PATH}/statics/rust.png'
     LUA_LOGO = f'{BASE_PATH}/statics/lua.png'
     FONT_FACE = f'{BASE_PATH}/statics/FiraCode.ttf'
-    BACKGROUND_RGBA = (0,0,0,255)
-    CODE_THEME = Style
+    BACKGROUND_RGBA = (0, 0, 0, 255)
+    CODE_THEME = DarkStyle
+    LIGHT_BACKGROUND_RGBA = (255, 255, 255, 255)
+    LIGHT_CODE_THEME = LightStyle

@@ -1,33 +1,21 @@
-<?php 
+<?php
 /*
- * Subir o servidor de desenvolvimento do PHP
- * php -S 0.0.0.0:8080
- * 
- * Tornando a pasta atual a raiz do servidor 
- * 
- * lembrando que o output do PHP se for HTML,
- * sera interpretado corretamente no navegador
- * 
- * basta acessar 0.0.0.0:8080/form_info.php
- */
-
+Recebendo dados de formulário com PHP
+php -S 0.0.0.0:8080
+acesse 0.0.0.0:8080/form_info.php
+*/
 $nome = '';
 if (isset($_POST['nome'])) {
     $nome = $_POST['nome'];
 }
 ?>
 <html>
-  <body>
-    <form method="post">
-        <label for="nome">
-          Digite seu nome:
-        </label>
-        <input id="nome" name="nome" type="text" autofocus value="<?=$nome?>">
-        <input type="submit" value="Enviar">
-        <br />
-        <?php if ($nome) { ?>
-          Bem Vindo! <?=$nome?>
-        <?php } ?>
-    </form>
-  </body>
+<body>
+<form method="post">
+    <label>Digite seu nome:</label>
+    <input name="nome" type="text" value="<?=$nome?>">
+    <input type="submit" value="Enviar">
+    <?php if ($nome) { echo "Bem Vindo! $nome"; } ?>
+</form>
+</body>
 </html>

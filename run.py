@@ -17,12 +17,12 @@ app = typer.Typer()
 
 
 @app.command()
-def render_bun(post_name: str):
+def render_bun(post_name: str, light: bool = typer.Option(False, "--light")):
     post_path = f"{Settings.BASE_PATH}/posts/bun/{post_name}.ts"
     path = Path(post_path)
     lexer = get_lexer_by_name('typescript')
     if (path.is_file()):
-        pub = Pub(post_name, post_path, PolaroidBun, lexer)
+        pub = Pub(post_name, post_path, PolaroidBun, lexer, dark=not light, lang="bun")
         pub.generate()
     else:
         post_path = f"{Settings.BASE_PATH}/posts/bun/{post_name}/"
@@ -30,16 +30,16 @@ def render_bun(post_name: str):
         for index, file in enumerate(files):
             if file.startswith('__'):
                 continue
-            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidBun, lexer)
+            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidBun, lexer, dark=not light, lang="bun")
             pub.generate()
 
 @app.command()
-def render_python(post_name: str):
+def render_python(post_name: str, light: bool = typer.Option(False, "--light")):
     post_path = f"{Settings.BASE_PATH}/posts/python/{post_name}.py"
     path = Path(post_path)
     lexer = get_lexer_by_name('python')
     if (path.is_file()):
-        pub = Pub(post_name, post_path, PolaroidPython, lexer)
+        pub = Pub(post_name, post_path, PolaroidPython, lexer, dark=not light, lang="python")
         pub.generate()
     else:
         post_path = f"{Settings.BASE_PATH}/posts/python/{post_name}/"
@@ -47,16 +47,16 @@ def render_python(post_name: str):
         for index, file in enumerate(files):
             if file.startswith('__'):
                 continue
-            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidPython, lexer)
+            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidPython, lexer, dark=not light, lang="python")
             pub.generate()
 
 @app.command()
-def render_lua(post_name: str):
+def render_lua(post_name: str, light: bool = typer.Option(False, "--light")):
     post_path = f"{Settings.BASE_PATH}/posts/lua/{post_name}.lua"
     path = Path(post_path)
     lexer = get_lexer_by_name('lua')
     if (path.is_file()):
-        pub = Pub(post_name, post_path, PolaroidLua, lexer)
+        pub = Pub(post_name, post_path, PolaroidLua, lexer, dark=not light, lang="lua")
         pub.generate()
     else:
         post_path = f"{Settings.BASE_PATH}/posts/lua/{post_name}/"
@@ -64,16 +64,16 @@ def render_lua(post_name: str):
         for index, file in enumerate(files):
             if file.startswith('__'):
                 continue
-            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidLua, lexer)
+            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidLua, lexer, dark=not light, lang="lua")
             pub.generate()
 
 @app.command()
-def render_php(post_name: str):
+def render_php(post_name: str, light: bool = typer.Option(False, "--light")):
     post_path = f"{Settings.BASE_PATH}/posts/php/{post_name}.php"
     path = Path(post_path)
     lexer = get_lexer_by_name('php')
     if (path.is_file()):
-        pub = Pub(post_name, post_path, PolaroidPhp, lexer)
+        pub = Pub(post_name, post_path, PolaroidPhp, lexer, dark=not light, lang="php")
         pub.generate()
     else:
         post_path = f"{Settings.BASE_PATH}/posts/php/{post_name}/"
@@ -81,16 +81,16 @@ def render_php(post_name: str):
         for index, file in enumerate(files):
             if file.startswith('__'):
                 continue
-            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidPhp, lexer)
+            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidPhp, lexer, dark=not light, lang="php")
             pub.generate()
 
 @app.command()
-def render_go(post_name: str):
+def render_go(post_name: str, light: bool = typer.Option(False, "--light")):
     post_path = f"{Settings.BASE_PATH}/posts/go/{post_name}.go"
     path = Path(post_path)
     lexer = get_lexer_by_name('go')
     if (path.is_file()):
-        pub = Pub(post_name, post_path, PolaroidGo, lexer)
+        pub = Pub(post_name, post_path, PolaroidGo, lexer, dark=not light, lang="go")
         pub.generate()
     else:
         post_path = f"{Settings.BASE_PATH}/posts/go/{post_name}/"
@@ -98,16 +98,16 @@ def render_go(post_name: str):
         for index, file in enumerate(files):
             if file.startswith('__'):
                 continue
-            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidGo, lexer)
+            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidGo, lexer, dark=not light, lang="go")
             pub.generate()
 
 @app.command()
-def render_rust(post_name: str):
+def render_rust(post_name: str, light: bool = typer.Option(False, "--light")):
     post_path = f"{Settings.BASE_PATH}/posts/rust/{post_name}.rs"
     path = Path(post_path)
     lexer = get_lexer_by_name('rust')
     if (path.is_file()):
-        pub = Pub(post_name, post_path, PolaroidRust, lexer)
+        pub = Pub(post_name, post_path, PolaroidRust, lexer, dark=not light, lang="rust")
         pub.generate()
     else:
         post_path = f"{Settings.BASE_PATH}/posts/rust/{post_name}/"
@@ -115,7 +115,7 @@ def render_rust(post_name: str):
         for index, file in enumerate(files):
             if file.startswith('__'):
                 continue
-            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidRust, lexer)
+            pub = Pub(f"{post_name}{index}", f"{post_path}{file}", PolaroidRust, lexer, dark=not light, lang="rust")
             pub.generate()
 
 if __name__ == "__main__":
