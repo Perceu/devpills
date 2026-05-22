@@ -12,3 +12,4 @@ parsel
 click
 instagrapi
 python-dotenv
+moviepy

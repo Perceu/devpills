@@ -20,5 +20,7 @@ class Settings():
     FONT_FACE = f'{BASE_PATH}/statics/FiraCode.ttf'
     BACKGROUND_RGBA = (0, 0, 0, 255)
     CODE_THEME = DarkStyle
+    CODE_OUTLINE = '#F0F0F0'
     LIGHT_BACKGROUND_RGBA = (255, 255, 255, 255)
     LIGHT_CODE_THEME = LightStyle
+    LIGHT_CODE_OUTLINE = '#555555'

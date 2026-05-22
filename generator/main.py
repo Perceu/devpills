@@ -35,10 +35,12 @@ class Pub():
     def generate(self):
         prev_bg = Settings.BACKGROUND_RGBA
         prev_theme = Settings.CODE_THEME
+        prev_outline = Settings.CODE_OUTLINE
 
         if not self.dark:
             Settings.BACKGROUND_RGBA = Settings.LIGHT_BACKGROUND_RGBA
             Settings.CODE_THEME = Settings.LIGHT_CODE_THEME
+            Settings.CODE_OUTLINE = Settings.LIGHT_CODE_OUTLINE
 
         img_codigo = self.gerar_img_codigo()
         prefix = f"{self.lang}_" if self.lang else ""
@@ -48,3 +50,4 @@ class Pub():
 
         Settings.BACKGROUND_RGBA = prev_bg
         Settings.CODE_THEME = prev_theme
+        Settings.CODE_OUTLINE = prev_outline

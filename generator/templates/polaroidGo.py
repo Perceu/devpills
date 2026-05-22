@@ -31,9 +31,9 @@ class PolaroidGo():
 
         final_image = Image.new('RGBA', (Settings.IMAGE_WIDTH, Settings.IMAGE_HEIGHT), Settings.BACKGROUND_RGBA)       
         draw = ImageDraw.Draw(final_image)
-        
+
         draw.rounded_rectangle((Settings.PADDING - 25, Settings.PADDING - 25, Settings.IMAGE_WIDTH - Settings.PADDING + 25, Settings.IMAGE_HEIGHT - Settings.PADDING + 25), radius=10, fill='white', outline='#ccc', width=3)
-        draw.rounded_rectangle((Settings.PADDING, Settings.PADDING, Settings.IMAGE_WIDTH - Settings.PADDING, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), radius=10, fill=Settings.CODE_THEME.background_color, outline='#F0F0F0', width=5)
+        draw.rounded_rectangle((Settings.PADDING, Settings.PADDING, Settings.IMAGE_WIDTH - Settings.PADDING, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), radius=10, fill=Settings.CODE_THEME.background_color, outline=Settings.CODE_OUTLINE, width=5)
         draw.text((Settings.PADDING+10, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), self.signature, font=font, fill=(100, 100, 100))
         final_image.paste(powered_by, (Settings.IMAGE_WIDTH - Settings.PADDING - 180, Settings.IMAGE_HEIGHT - Settings.PADDING - 90), powered_by)
 
@@ -53,7 +53,7 @@ class PolaroidGo():
 
         final_image.paste(img_code_final, (Settings.PADDING+5, Settings.PADDING+5))
 
-        draw.rounded_rectangle((Settings.PADDING, Settings.PADDING, Settings.IMAGE_WIDTH - Settings.PADDING, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), radius=10, outline='#F0F0F0', width=5)
+        draw.rounded_rectangle((Settings.PADDING, Settings.PADDING, Settings.IMAGE_WIDTH - Settings.PADDING, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), radius=10, outline=Settings.CODE_OUTLINE, width=5)
         final_image.save(f"{self.output}_post.png")
 
     def generate_cape(self):
@@ -64,7 +64,7 @@ class PolaroidGo():
         final_image = Image.new('RGBA', (Settings.IMAGE_WIDTH, Settings.IMAGE_HEIGHT), Settings.BACKGROUND_RGBA)
         draw = ImageDraw.Draw(final_image)
         draw.rounded_rectangle((Settings.PADDING - 25, Settings.PADDING - 25, Settings.IMAGE_WIDTH - Settings.PADDING + 25, Settings.IMAGE_HEIGHT - Settings.PADDING + 25), radius=10, fill='white', outline='#ccc', width=3)
-        draw.rounded_rectangle((Settings.PADDING, Settings.PADDING, Settings.IMAGE_WIDTH - Settings.PADDING, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), radius=10, fill=Settings.CODE_THEME.background_color, outline='#F0F0F0', width=5)
+        draw.rounded_rectangle((Settings.PADDING, Settings.PADDING, Settings.IMAGE_WIDTH - Settings.PADDING, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), radius=10, fill=Settings.CODE_THEME.background_color, outline=Settings.CODE_OUTLINE, width=5)
         draw.text((Settings.PADDING+10, Settings.IMAGE_HEIGHT - Settings.PADDING - 100), self.signature, font=font, fill=(100, 100, 100))
         final_image.paste(powered_by, (Settings.IMAGE_WIDTH - Settings.PADDING - 180, Settings.IMAGE_HEIGHT - Settings.PADDING - 90), powered_by)
 
